@@ -12,9 +12,10 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WeatherService {
 
-    private static final Logger log =
-            LoggerFactory.getLogger(WeatherService.class);
+    private static final Logger log = LoggerFactory.getLogger(WeatherService.class);
+    
     private RestTemplate restTemplate;
+    
     private String weatherUrl;
     private String apiKey;
 
@@ -24,7 +25,6 @@ public class WeatherService {
         this.restTemplate = new RestTemplate();
         this.weatherUrl = weatherUrl;
         this.apiKey = apiKey;
-
     }
 
     public TempAndTime getTempAndTime(String cityName) {
@@ -39,6 +39,5 @@ public class WeatherService {
                 int timezone = json.get("timezone").asInt();
                 return new TempAndTime(temp, time, timezone);
     }
-
 
 }
