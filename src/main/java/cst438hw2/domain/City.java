@@ -7,35 +7,37 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="city")
+@Table(name="City")
 public class City {
 
 	@Id
-	private int ID;
+	private int id;
 	private String name;
+	private String countryCode;
 	private String district;
 	private int population;
 	
 	@ManyToOne
-	@JoinColumn(name="countryCode", referencedColumnName="code")
+	@JoinColumn(name="countryCode", referencedColumnName="code",insertable = false, updatable = false)
 	private Country country;
 	
 	public City() {}
 
-	public City(int ID, String name, String district, int population, Country country) {
-		this.ID = ID;
+	public City(int id, String name, String countryCode, String district, int population, Country country) {
+		this.id = id;
 		this.name = name;
+		this.countryCode = countryCode;
 		this.district = district;
 		this.population = population;
 		this.country = country;
 	}
 
 	public int getID() {
-		return ID;
+		return id;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -44,6 +46,14 @@ public class City {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 
 	public String getDistrict() {
@@ -79,12 +89,22 @@ public class City {
 		if (getClass() != obj.getClass())
 			return false;
 		City other = (City) obj;
-		if (ID != other.ID)
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (countryCode == null) {
+			if (other.countryCode != null)
+				return false;
+		} else if (!countryCode.equals(other.countryCode))
 			return false;
 		if (district == null) {
 			if (other.district != null)
 				return false;
 		} else if (!district.equals(other.district))
+			return false;
+		if (id != other.id)
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -98,8 +118,8 @@ public class City {
 
 	@Override
 	public String toString() {
-		return "City [ID=" + ID + ", name=" + name + ", district=" + district + ", population=" + population
-				+ "]";
+		return "City [id=" + id + ", name=" + name + ", countryCode=" + countryCode + ", district=" + district
+				+ ", population=" + population + ", country=" + country + "]";
 	}
 	
 }

@@ -2,39 +2,35 @@ package cst438hw2.domain;
 
 public class CityInfo {
 	
-	private int cityId;
-	private String cityName;
-	private String countryCode;
-	private String countryName;
-	private String cityDistrict;
-	private int cityPopulation;
-	private String temp;
-	private String time;
-	private TempAndTime cityTempAndTime;
-	
-	public CityInfo () {
-		
-	}
-	
-	public CityInfo(int cityId, String cityName, String countryCode, String countryName, String cityDistrict,
-			int cityPopulation, String temp, String time, TempAndTime cityTempAndTime) {
-		this.cityId = cityId;
-		this.cityName = cityName;
-		this.countryCode = countryCode;
-		this.countryName = countryName;
-		this.cityDistrict = cityDistrict;
-		this.cityPopulation = cityPopulation;
-		this.temp = temp;
-		this.time = time;
-		this.cityTempAndTime = cityTempAndTime;
+	private int id;
+    private String cityName;
+    private String countryName;
+    private String countryCode;
+    private String district;
+    private int population;
+    private TempAndTime timeAndTemp;
+    
+    public CityInfo( ) {
+    	
+    }
+
+    public CityInfo(int id, String cityName,String countryName, String countryCode,
+    		String district , int population, TempAndTime timeAndTemp) {
+    	this.id = id;
+        this.cityName = cityName;
+        this.countryName = countryName;
+        this.countryCode = countryCode;
+        this.district = district;
+        this.population = population;
+        this.timeAndTemp = timeAndTemp;
+    }
+
+	public int getId() {
+		return id;
 	}
 
-	public int getCityId() {
-		return cityId;
-	}
-
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCityName() {
@@ -45,14 +41,6 @@ public class CityInfo {
 		this.cityName = cityName;
 	}
 
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
-
 	public String getCountryName() {
 		return countryName;
 	}
@@ -61,44 +49,36 @@ public class CityInfo {
 		this.countryName = countryName;
 	}
 
-	public String getCityDistrict() {
-		return cityDistrict;
+	public String getCountryCode() {
+		return countryCode;
 	}
 
-	public void setCityDistrict(String cityDistrict) {
-		this.cityDistrict = cityDistrict;
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 
-	public int getCityPopulation() {
-		return cityPopulation;
+	public String getDistrict() {
+		return district;
 	}
 
-	public void setCityPopulation(int cityPopulation) {
-		this.cityPopulation = cityPopulation;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
-	public String getTemp() {
-		return temp;
+	public int getPopulation() {
+		return population;
 	}
 
-	public void setTemp(String temp) {
-		this.temp = temp;
+	public void setPopulation(int population) {
+		this.population = population;
 	}
 
-	public String getTime() {
-		return time;
+	public TempAndTime getTimeAndTemp() {
+		return timeAndTemp;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
-	}
-
-	public TempAndTime getCityTempAndTime() {
-		return cityTempAndTime;
-	}
-
-	public void setCityTempAndTime(TempAndTime cityTempAndTime) {
-		this.cityTempAndTime = cityTempAndTime;
-	}
+	public void setTimeAndTemp(TempAndTime timeAndTemp) {
+		this.timeAndTemp = timeAndTemp;
+	} 
 
 }

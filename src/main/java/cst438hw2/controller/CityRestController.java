@@ -1,5 +1,6 @@
 package cst438hw2.controller;
 
+import cst438hw2.domain.CityInfo;
 import cst438hw2.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,10 @@ public class CityRestController {
 
     @GetMapping("/api/cities/{city}")
     public CityInfo getWeather(@PathVariable("city") String cityName) {
+    	
+    	CityInfo cityInfo = new CityInfo();
+    	
+    	return cityInfo;
         
     }
 

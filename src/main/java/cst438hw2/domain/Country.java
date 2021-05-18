@@ -1,12 +1,14 @@
 package cst438hw2.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="country")
+@Table(name="Country")
 public class Country {
 	
+	@Id
 	private String code;
 	private String name;
 	
