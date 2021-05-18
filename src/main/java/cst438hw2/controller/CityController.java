@@ -16,7 +16,6 @@ public class CityController {
 	public String getWeather(@PathVariable("city") String cityName, Model model) {
 		CityInfo cityInfo = cityService.getCityInfo(cityName);
 		if (cityInfo == null) {
-			// error.  city not found
 			model.addAttribute("error", "City not found. "+cityName);
 			return "cityerror";
 		} else {

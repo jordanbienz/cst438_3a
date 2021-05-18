@@ -1,5 +1,6 @@
 package cst438hw2.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -13,12 +14,13 @@ public class City {
 	@Id
 	private int id;
 	private String name;
+	@Column(name = "countrycode") 
 	private String countryCode;
 	private String district;
 	private int population;
 	
 	@ManyToOne
-	@JoinColumn(name="countryCode", referencedColumnName="code",insertable = false, updatable = false)
+	@JoinColumn(name="countrycode", referencedColumnName="code",insertable = false, updatable = false)
 	private Country country;
 	
 	public City() {}
