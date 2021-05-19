@@ -1,7 +1,9 @@
 package cst438hw3a.service;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.amqp.core.FanoutExchange;
 
 import cst438hw3a.domain.City;
 import cst438hw3a.domain.CityInfo;
@@ -26,7 +28,7 @@ public class CityService {
     private RabbitTemplate rabbitTemplate;
     
     @Autowired
-    private FanoutExcahnge fanout;
+    private FanoutExchange fanout;
     
     public CityService(){}
 

@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class ConfigPublisher {
 	@Bean
 	public FanoutExchange fanout() {
-		return new FanoutExchange(&quot;city-reservation&quot;);
-		}
+		return new FanoutExchange("city-reservation");
 	}
+}
